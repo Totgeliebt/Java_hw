@@ -1,4 +1,3 @@
-
 public class main {
 
     public static void checkArray(Integer[] array) {
