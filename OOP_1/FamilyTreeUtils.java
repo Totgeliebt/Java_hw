@@ -1,5 +1,4 @@
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +34,7 @@ public class FamilyTreeUtils {
         }
     }
 
-    public List<Person> FindParents(int id) {
+    public List<Person> findParents(int id) {
         List<Person> res = new ArrayList<>();
         for (Relation relation : familyTree.getRelations()) {
             if (relation.getID1() == id && relation.getTypeID1toID2() == Type.CHILD)
