@@ -1,3 +1,6 @@
+/**
+ * FamilyTree
+ */
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -7,7 +10,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
+
+import Lesson2.Relation.Type;
 
 public class FamilyTree {
     private HashMap<Integer, Person> persons;
@@ -52,13 +56,15 @@ public class FamilyTree {
             relations.clear();
             int count = ds.readInt();
             for (int i = 0; i < count; i++) {
-                Person person = Person.load(ds);
+                Person person = new Person(0);
+                person.load(ds);
                 persons.put(person.get_id(), person);
             }
 
             count = ds.readInt();
             for (int i = 0; i < count; i++) {
-                Relation relation = Relation.load(ds);
+                Relation relation = new Relation(0, 0, Type.CHILD);
+                relation.load(ds);
                 relations.add(relation);
             }
 
@@ -103,8 +109,7 @@ public class FamilyTree {
         if (persons.containsKey(id) == false)
             return null;
         return persons.get(id);
-
-}
+    }
 
     /**
      * Поиск ID персоны по ФИО
@@ -126,6 +131,7 @@ public class FamilyTree {
 
     /**
      * Возвращаем список персон
+     *
      * @return
      */
     public Collection<Person> getPersons() {
@@ -153,6 +159,7 @@ public class FamilyTree {
 
     /**
      * Удаление связи меду персонами id1 b id2
+     *
      * @param id1
      * @param id2
      * @return
