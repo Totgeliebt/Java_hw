@@ -21,7 +21,7 @@ public class Command_findparents implements ICommand {
     }
 
     @Override
-    public void exercute(Scanner scanner, FamilyTreeUtils utils) {
+    public void execute(Scanner scanner, FamilyTreeUtils utils) {
         System.out.println("Введите ID: ");
         String input = scanner.nextLine();
         List<Person> parents = utils.FindParents(Integer.parseInt(input));
