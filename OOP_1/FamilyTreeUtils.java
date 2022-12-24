@@ -1,14 +1,17 @@
-
 import java.util.ArrayList;
 import java.util.List;
 
-import Lesson1.Relation.Type;
+import Lesson2.Relation.Type;
 
 public class FamilyTreeUtils {
     private FamilyTree familyTree;
 
     public FamilyTreeUtils(FamilyTree familyTree) {
         this.familyTree = familyTree;
+    }
+
+    public FamilyTree geFamilyTree() {
+        return familyTree;
     }
 
     public void testFillTree() {
@@ -28,12 +31,18 @@ public class FamilyTreeUtils {
         familyTree.addRelation(new Relation(person34.id, person22.id, Relation.Type.CHILD));
     }
 
+
     public void print() {
         for (Person person : familyTree.getPersons()) {
             System.out.println(person);
         }
     }
 
+    /**
+     * Поиск по дереву родителей персоны id
+     * @param id
+     * @return
+     */
     public List<Person> findParents(int id) {
         List<Person> res = new ArrayList<>();
         for (Relation relation : familyTree.getRelations()) {
