@@ -107,4 +107,8 @@ public class Person implements IioStream {
         this.info = info;
         this.gender = gender;
     }
+    @Override
+        public int compareTo(Person o) {
+            return name.compareTo(o.name);
+        }
 }

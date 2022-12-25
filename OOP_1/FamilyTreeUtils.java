@@ -30,14 +30,21 @@ public class FamilyTreeUtils {
         familyTree.addRelation(new Relation(person33.id, person22.id, Relation.Type.CHILD));
         familyTree.addRelation(new Relation(person34.id, person22.id, Relation.Type.CHILD));
     }
-
+    public void sortByName(){
+            Collections.sort(familyTree.getPersonsList());
+        }
 
     public void print() {
         for (Person person : familyTree.getPersons()) {
             System.out.println(person);
         }
     }
+    familyTree.sortByName();
+            for (Person person: familyTree){
+                System.out.println(person);
+            }
 
+            System.out.println();
     /**
      * Поиск по дереву родителей персоны id
      * @param id

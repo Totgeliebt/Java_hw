@@ -8,16 +8,16 @@ import Lesson2.Interfaces.ICommand;
 /*
  * Поиск родителей для персоны ID
  */
-public class Command_findparents implements ICommand {
+public class Command_findParents implements ICommand {
 
     @Override
     public String info() {
-        return "findparents - нахождение родителей персоны с ID";
+        return "findParents - нахождение родителей персоны с ID";
     }
 
     @Override
     public String getName() {
-        return "findparents";
+        return "findParents";
     }
 
     @Override

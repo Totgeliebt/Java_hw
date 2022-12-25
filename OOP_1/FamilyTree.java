@@ -185,4 +185,8 @@ public class FamilyTree {
         return (ArrayList<Relation>) relations.clone(); // возвращаем клон, чтобы обезопаситься от изменения Списка
                                                         // (правда, содержимое все равно передаем по ссылке..)
     }
+//     @Override
+//         public Iterator iterator() {
+//             return null;
+//         }
 }

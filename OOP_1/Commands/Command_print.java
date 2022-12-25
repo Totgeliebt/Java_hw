@@ -1,26 +1,26 @@
 import java.util.Scanner;
 
-import Lesson2.FamilyTreeUtils;
-import Lesson2.Interfaces.ICommand;
+import Lesson4.FamilyTreeUtils;
+import Lesson4.Interfaces.ICommand;
 
 /**
- * Загрузка дерева из файла "FamilyTree.dat"
+ * Вывод дерева на экран
  */
-public class Command_load implements ICommand {
+public class Command_print implements ICommand {
 
     @Override
     public String info() {
-        return "load - загрузка дерева из файла";
+        return "print - вывод дерева";
     }
 
     @Override
     public String getName() {
-        return "load";
+        return "print";
     }
 
     @Override
     public void execute(Scanner scanner, FamilyTreeUtils utils) {
-        utils.geFamilyTree().load("FamilyTree.dat");
+        utils.print();
     }
-
 }
+Footer

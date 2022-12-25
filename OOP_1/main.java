@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import Lesson2.Commands.Command_findparents;
+import Lesson2.Commands.Command_findParents;
 import Lesson2.Commands.Command_load;
 import Lesson2.Commands.Command_print;
 import Lesson2.Commands.Command_save;
@@ -24,7 +24,7 @@ public class main {
         commands.add(new Command_print());
         commands.add(new Command_save());
         commands.add(new Command_load());
-        commands.add(new Command_findparents());
+        commands.add(new Command_findParents());
         //#endregion
 
 
@@ -39,7 +39,7 @@ public class main {
             boolean input_is_OK = false;
             for (ICommand command : commands) {
                 if (input.equals(command.getName())) {
-                    command.exercute(scanner, utils);
+                    command.execute(scanner, utils);
                     input_is_OK = true;
                     break;
                 }
